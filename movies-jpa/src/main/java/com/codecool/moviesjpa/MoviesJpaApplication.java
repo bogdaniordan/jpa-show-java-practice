@@ -10,4 +10,5 @@ public class MoviesJpaApplication {
 		SpringApplication.run(MoviesJpaApplication.class, args);
 	}
 
+
 }
