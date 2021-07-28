@@ -1,5 +1,6 @@
 package com.codecool.moviesjpa.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,10 +13,11 @@ import java.util.List;
 @Builder
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Series {
     @Id
     @GeneratedValue
-    private int id;
+    private int Long;
     @Column(name = "name")
     private String name;
     @Column(name = "length_in_minutes")
@@ -26,12 +28,4 @@ public class Series {
     private Genre genre;
     @OneToMany
     List<Season> seasons;
-
-    public Series(String name, int lengthInMinutes, LocalDate releaseDate, Genre genre, List<Season> seasons) {
-        this.name = name;
-        this.lengthInMinutes = lengthInMinutes;
-        this.releaseDate = releaseDate;
-        this.genre = genre;
-        this.seasons = seasons;
-    }
 }

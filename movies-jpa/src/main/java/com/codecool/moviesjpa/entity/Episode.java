@@ -1,5 +1,6 @@
 package com.codecool.moviesjpa.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,10 +12,11 @@ import java.time.LocalDate;
 @Builder
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 public class Episode {
     @Id
     @GeneratedValue
-    private int id;
+    private int Long;
     @Column(name = "name")
     private String name;
     @Column(name = "length_in_minutes")
@@ -23,11 +25,4 @@ public class Episode {
     private LocalDate releaseDate;
     @Transient
     private boolean awarded;
-
-    public Episode(String name, int lengthInMinutes, LocalDate releaseDate, boolean awarded) {
-        this.name = name;
-        this.lengthInMinutes = lengthInMinutes;
-        this.releaseDate = releaseDate;
-        this.awarded = awarded;
-    }
 }
