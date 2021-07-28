@@ -25,4 +25,7 @@ public class Episode {
     private LocalDate releaseDate;
     @Transient
     private boolean awarded;
+
+    @ManyToOne
+    private Season season;
 }

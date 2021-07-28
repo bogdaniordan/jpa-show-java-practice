@@ -1,9 +1,6 @@
 package com.codecool.moviesjpa.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -26,6 +23,8 @@ public class Series {
     private LocalDate releaseDate;
     @Enumerated
     private Genre genre;
-    @OneToMany
+
+    @Singular
+    @OneToMany(mappedBy = "series",cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     List<Season> seasons;
 }
